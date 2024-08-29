@@ -95,7 +95,7 @@ public class MainActivity extends FlutterActivity {
                 String text = segment.get("text").getAsString();
 
                 // Convert milliseconds to MM:SS format without milliseconds
-                String startTime = convertMillisToMMSS(startTimeMs);
+                String startTime = convertMillisToHHMM(startTimeMs);
 
                 sb.append("화자").append(speakerLabel).append(" ").append(startTime).append("\n");
                 sb.append(text).append("\n\n");
@@ -108,10 +108,10 @@ public class MainActivity extends FlutterActivity {
         return sb.toString();
     }
 
-    private String convertMillisToMMSS(long millis) {
-        long seconds = millis / 1000;
-        long minutes = seconds / 60;
-        seconds = seconds % 60;
-        return String.format("%02d:%02d", minutes, seconds);
+    private String convertMillisToHHMM(long millis) {
+        long totalMinutes = millis / (60 * 1000);
+        long hours = totalMinutes / 60;
+        long minutes = totalMinutes % 60;
+        return String.format("%02d:%02d", hours, minutes);
     }
 }
