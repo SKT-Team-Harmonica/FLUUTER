@@ -84,7 +84,7 @@ class _VoicePageState extends State<VoicePage> {
     try {
       print('Fetching video for: $gloss');
       final response = await http.get(Uri.parse(
-          'http://6037-203-236-8-208.ngrok-free.app/similar?gloss=$gloss'));
+          'https://fc58-203-236-3-227.ngrok-free.app/similar?gloss=$gloss'));
       if (response.statusCode == 200) {
         // Save the MP4 file received from the server locally
         final Directory tempDir = await getTemporaryDirectory();
@@ -148,7 +148,7 @@ class _VoicePageState extends State<VoicePage> {
   }
 
   Future<void> _translateText(String text, String targetLanguage) async {
-    final url = 'https://294a-203-236-8-208.ngrok-free.app/translate';
+    final url = 'https://6afa-203-236-3-227.ngrok-free.app/translate';
     final headers = {'Content-Type': 'application/json'};
     final body = json.encode({
       'string': text,
