@@ -85,7 +85,7 @@ class _CameraPageState extends State<CameraPage> {
   Future<void> _sendVideoToServer(XFile videoFile) async {
     final request = http.MultipartRequest(
       'POST',
-      Uri.parse('https://294a-203-236-8-208.ngrok-free.app/predict'),
+      Uri.parse('https://6afa-203-236-3-227.ngrok-free.app/predict'),
     );
     request.files
         .add(await http.MultipartFile.fromPath('video', videoFile.path));
@@ -118,7 +118,7 @@ class _CameraPageState extends State<CameraPage> {
   }
 
   Future<void> _translateText(String text, String targetLanguage) async {
-    final url = 'https://294a-203-236-8-208.ngrok-free.app/translate';
+    final url = 'https://6afa-203-236-3-227.ngrok-free.app/translate';
     final headers = {'Content-Type': 'application/json'};
     final body = json.encode({
       'string': text,
